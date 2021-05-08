@@ -1,0 +1,40 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+      <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+      <span class="searchBox"> | <input [(ngModel)]="searchfor" class="no-border" type="text" placeholder="Search"></span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table table-sm table-hover" *ngIf="properties">
+      <tr class="stky-hdr">
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Description')">Description <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let property of properties | search: searchfor |  sort:sortProperty:sortOrder">
+        <td>{{ property.code }}</td>
+        <td>{{ property.Description }}</td>
+        <td>
+          {{ property.Address1 }}
+          <span *ngIf="property.Address2">, {{ property.Address2 }}</span>
+          <span *ngIf="property.Address3">, {{ property.Address3 }}</span>
+        </td>
+        <td>{{ property.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/properties/detail/{{  property.id }}">Detail</a></span>
+          <span> | <a routerLink="/properties/edit/{{ property.id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

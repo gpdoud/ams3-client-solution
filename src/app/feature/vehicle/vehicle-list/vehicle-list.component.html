@@ -1,0 +1,46 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+      <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+      <span class="searchBox"> | <input [(ngModel)]="searchfor" class="no-border" type="text" placeholder="Search"></span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table table-sm table-hover" *ngIf="vehicles">
+      <tr class="stky-hdr">
+          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('AssetName')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Year')">Year <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Make')">Make <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Model')">Model <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('LicensePlate')">License Plate <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('TitleNo')">Title No. <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('VIN')">VIN <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let vehicle of vehicles | search: searchfor |  sort:sortProperty:sortOrder">
+        <td>{{ vehicle.code }}</td>
+        <td>{{ vehicle.Asset.Name }}</td>
+        <td>{{ vehicle.Year }}</td>
+        <td>{{ vehicle.Make }}</td>
+        <td>{{ vehicle.Model }}</td>
+        <td>{{ vehicle.LicensePlate }}</td>
+        <td>{{ vehicle.TitleNo }}</td>
+        <td>{{ vehicle.VIN }}</td>
+        <td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/vehicles/detail/{{  vehicle.id }}">Detail</a></span>
+          <span> | <a routerLink="/vehicles/edit/{{ vehicle.id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

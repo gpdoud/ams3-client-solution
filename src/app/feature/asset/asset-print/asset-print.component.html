@@ -1,0 +1,13 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+<!--   <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+ -->  
+  <div class="content">
+    <h1>Asset Listing</h1>
+    <app-asset-print-department *ngFor="let dept of depts | sort:'Name'" [dept]="dept"></app-asset-print-department>
+  </div>
+</div>

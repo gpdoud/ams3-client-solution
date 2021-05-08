@@ -1,0 +1,67 @@
+<div class="component">
+    <div class="menu">
+      <app-menu></app-menu>
+    </div>
+     <div class="content">
+      <h1>{{pagetitle || "List of Department's Assets"}}</h1>
+      <h5 style="color: red; text-align:right" >Total Number of Vehicles:  {{vehicles?.length}}</h5>
+      <table class="table table-sm" *ngIf="vehicles">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Year/Make/Model</th>
+            <th>License Plate</th>
+            <th>VIN</th>
+            <th>Active</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Residual</th>
+            <th>Acquired</th>
+            <th>Disposed</th>
+        </tr>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>{{ vehicle.code }}</td>
+          <td>{{ vehicle.asset.name }}</td>
+          <td>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}</td>
+          <td>{{ vehicle.licensePlate }}</td>
+          <td>{{ vehicle.VIN }}</td>
+          <td>{{ vehicle.active ? "Yes" : "No" }}</td>
+          <td>{{ vehicle.asset.description }}</td>
+          <td>{{ vehicle.asset.cost | currency }}</td>
+          <td>{{ vehicle.asset.residualValue | currency }}</td>
+          <td>{{ vehicle.asset.acquiredDate | date }}</td>
+          <td>{{ vehicle.asset.disposedDate | date }}</td>
+        </tr>
+      </table>
+      <hr />
+      <h5 style="color: red; text-align:right">Total Number of Equipments: {{equipments?.length}} </h5>
+      <table class="table table-sm" *ngIf="equipments">
+        <tr>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Year/Make/Model</th>
+            <th>Serial Number</th>
+            <th>Active</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Residual</th>
+            <th>Acquired</th>
+            <th>Disposed</th>
+        </tr>
+        <tr *ngFor="let equip of equipments">
+          <td>{{ equip.code }}</td>
+          <td>{{ equip.description }}</td>
+          <td>{{ equip.year }} {{ equip.make }} {{ equip.model }}</td>
+          <td>{{ equip.serialNumber }}</td>
+          <td>{{ equip.active ? "Yes" : "No" }}</td>
+          <td>{{ equip.asset.name }}</td>
+          <td>{{ equip.asset.description }}</td>
+          <td>{{ equip.asset.cost | currency }}</td>
+          <td>{{ equip.asset.residualValue | currency }}</td>
+          <td>{{ equip.asset.acquiredDate | date }}</td>
+          <td>{{ equip.asset.disposedDate | date }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

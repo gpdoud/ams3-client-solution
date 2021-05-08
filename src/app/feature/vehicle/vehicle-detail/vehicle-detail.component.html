@@ -1,0 +1,35 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
+    </div>
+  </div>
+  <div class="content" *ngIf="vehicle">
+    <table class="table table-sm">
+      <tr>
+        <th>Code:</th><td>{{ vehicle.code }}</td>
+        <th>Year/Make/Model:</th><td>{{ vehicle.Year + " " + vehicle.Make + " " + vehicle.Model }}</td>
+        <th>License Plate:</th><td>{{ vehicle.LicensePlate }}</td>
+        <th>Title No:</th><td>{{ vehicle.TitleNo }}</td>
+        <th>VIN:</th><td>{{ vehicle.VIN }}</td>
+        <th>Active:</th><td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+      </tr>
+    </table>
+    <app-asset-detail [asset]="vehicle.Asset" [assetType]="assetType"></app-asset-detail>
+    <table class="table table-sm">
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["app/core/*"],
+      "@feat/*": ["app/feature/*"],
+      "@address/*": ["app/feature/address/*"],
+      "@asset/*": ["app/feature/asset/*"],
+      "@category/*": ["app/feature/category/*"],
+      "@department/*": ["app/feature/department/*"],
+      "@property/*": ["app/feature/property/*"],
+      "@system/*": ["app/feature/system/*"],
+      "@user/*": ["app/feature/user/*"],
+      "@vehicle/*": ["app/feature/vehicle/*"],
+      "@equipment/*": ["app/feature/equipment/*"]
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
+}

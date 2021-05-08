@@ -1,0 +1,26 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="title">
+    <span class="pagetitle">{{ pagetitle }}</span>
+  </div>
+  <!-- <app-error-detail [resp]="resp"></app-error-detail> -->
+  <div class="content">
+    <table class="table table-sm" *ngIf="user">
+      <tr><th>Name</th><td>{{ user.firstname + " " + user.lastname }}</td></tr>
+      <tr><th>User name</th><td>{{ user.username }}</td></tr>
+      <tr><th>Phone</th><td>{{ user.phone }}</td></tr>
+      <tr><th>Email</th><td>{{ user.email }}</td></tr>
+      <tr><th>Department</th><td>{{ user.department == null ? "Unassigned" : user.department.name }}</td></tr>
+      <tr><th>Active</th><td>{{ user.active ? "Yes" : "No" }}</td></tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="edit()" class="btn btn-warning">Edit</button>
+          <button (click)="remove()" class="btn btn-danger">Remove</button>
+          <button *ngIf="showVerifyDelete" (click)="verify()" class="btn btn-danger">Verify Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

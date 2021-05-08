@@ -1,0 +1,40 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div class="component-heading">  
+    <div class="title side-by-side">
+      <span class="pagetitle">{{ pagetitle }}</span>
+      <span class="newlink"> | <a routerLink="{{ createlink }}">{{ createlinkname }}</a></span>
+      <span class="searchBox"> | <input [(ngModel)]="searchfor" class="no-border" type="text" placeholder="Search"></span>
+    </div>
+    <div class="side-by-side align-right">
+      <span class="error-message">{{ errormessage }}</span>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table table-sm table-hover" *ngIf="users">
+      <tr class="stky-hdr">
+          <th><a (click)="sort('firstname')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('username')">Username <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('phone')">Phone <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('email')">Email <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('departmentName')">Department <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('active')">Active <i class="fas fa-sort"></i></a></th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let user of users | search: searchfor |  sort:sortProperty:sortOrder">
+        <td>{{ user.firstname + " " + user.lastname }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.department == null ? "Unassigned" : user.department.name }}
+        <td>{{ user.active ? "Yes" : "No" }}</td>
+        <td>
+          <span><a routerLink="/users/detail/{{  user.id }}">Detail</a></span>
+          <span> | <a routerLink="/users/edit/{{ user.id }}">Edit</a></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

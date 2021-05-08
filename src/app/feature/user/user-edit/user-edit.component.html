@@ -1,0 +1,76 @@
+<div class="component">
+  <div class="menu">
+    <app-menu></app-menu>
+  </div>
+  <div>
+    <div class="title sbs">
+      <span class="pagetitle">{{ pagetitle }}</span>
+    </div>
+<!--     <div class="sbs right">
+      <label id="message" class="text-danger"></label>
+    </div>
+ -->  
+  </div>
+  <div class="content">
+    <div class="container" *ngIf="user">
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Firstname">Firstname</label>
+        </div>
+        <input [(ngModel)]="user.firstname" name="Firstname" type="text" class="form-control" id="Firstname">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Lastname">Lastname</label>
+        </div>
+        <input [(ngModel)]="user.lastname" name="Lastname" type="text" class="form-control" id="Lastname">
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Username">Username</label>
+        </div>
+        <input [(ngModel)]="user.username" name="Username" type="text" class="form-control" id="Username">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Password">Password</label>
+        </div>
+        <input [(ngModel)]="user.password" name="Password" type="password" class="form-control" id="Password">
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Phone">Phone</label>
+        </div>
+        <input [(ngModel)]="user.phone" name="Phone" type="text" class="form-control" id="Phone">
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Email">Email</label>
+        </div>
+        <input [(ngModel)]="user.email" name="Email" type="text" class="form-control" id="Email">
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Department">Department</label>
+        </div>
+        <select [(ngModel)]="user.departmentId" name="Department" class="form-control" id="Department">
+          <option *ngFor="let dept of departments" [ngValue]="dept.id">{{ dept.name }}</option>
+        </select>      
+
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="Active">Active</label>
+        </div>
+        <select [(ngModel)]="user.active" name="Active" class="form-control" id="Active">
+          <option [ngValue]="true" selected>Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>      
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <button (click)="save()" class="btn btn-primary">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>

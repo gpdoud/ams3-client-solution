@@ -1,0 +1,42 @@
+body {
+}
+input[type='checkbox'] {
+  height: 2.5em;
+}
+.sbs, .side-by-side {
+  width: 49%;
+  display: inline-block;
+}
+.right, .align-right {
+  text-align: right;
+}
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+.no-border {
+  border: 0;
+}
+.component-heading {
+    padding-bottom: 2px;
+    border-bottom: 1px solid silver;
+    margin-bottom: 5px;
+}
+a:hover {
+  cursor: pointer;
+}
+/* to set bg of column headings to they're not transparent */
+.opaque {
+  background-color: white;
+}
+tr.stky-hdr:first-child th {
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+@media print {
+  @page { size: landscape; }
+  body { font-size: 0.8rem; }
+}
