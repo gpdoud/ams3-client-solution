@@ -6,7 +6,7 @@ export class Asset {
   description: string;
   acquiredDate: Date;
   disposedDate: Date;
-  PONumber: string;
+  poNumber: string;
   cost: number;
   outForRepairDate: Date;
   returnFromRepairDate: Date;
@@ -21,7 +21,7 @@ export class Asset {
     description: string,
     acquiredDate: Date,
     disposedDate: Date,
-    PONumber: string,
+    poNumber: string,
     cost: number,
     outForRepairDate: Date,
     returnFromRepairDate: Date,
@@ -35,7 +35,7 @@ export class Asset {
     this.description = description;
     this.acquiredDate = acquiredDate;
     this.disposedDate = disposedDate;
-    this.PONumber = PONumber;
+    this.poNumber = poNumber;
     this.cost = cost;
     this.outForRepairDate = outForRepairDate;
     this.returnFromRepairDate = returnFromRepairDate;

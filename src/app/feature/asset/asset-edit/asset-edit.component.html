@@ -9,12 +9,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Name">Name</label>
         </div>
-        <input [(ngModel)]="asset.Name" name="Name" type="text" class="form-control" id="Name">
+        <input [(ngModel)]="asset.name" name="Name" type="text" class="form-control" id="Name">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Description">Description</label>
         </div>
-        <input [(ngModel)]="asset.Description" name="Description" type="text" class="form-control" id="Description">
+        <input [(ngModel)]="asset.description" name="Description" type="text" class="form-control" id="Description">
 
       </div>
 
@@ -23,7 +23,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Department">Department</label>
         </div>
-        <select [(ngModel)]="asset.DepartmentId" name="Department" type="text" class="form-control" id="Department">
+        <select [(ngModel)]="asset.departmentId" name="Department" type="text" class="form-control" id="Department">
           <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.Name }}</option>
           <option value="">***Clear Department***</option>
         </select>
@@ -31,7 +31,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Category">Category</label>
         </div>
-        <select [(ngModel)]="asset.CategoryId" name="Category" type="text" class="form-control" id="Category">
+        <select [(ngModel)]="asset.categoryId" name="Category" type="text" class="form-control" id="Category">
           <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.Name }}</option>
           <option value="">***Clear Category***</option>
         </select>
@@ -39,7 +39,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="User">User</label>
         </div>
-        <select [(ngModel)]="asset.UserId" name="User" type="text" class="form-control" id="User">
+        <select [(ngModel)]="asset.userId" name="User" type="text" class="form-control" id="User">
           <option *ngFor="let user of users" [ngValue]="user.id">{{ user.Firstname }} {{ user.Lastname }}</option>
           <option value="">***Clear User***</option>
         </select>
@@ -59,7 +59,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="PONumber">PONumber</label>
         </div>
-        <input [(ngModel)]="asset.PONumber" name="PONumber" type="text" class="form-control" id="PONumber">
+        <input [(ngModel)]="asset.poNumber" name="PONumber" type="text" class="form-control" id="PONumber">
 
       </div>
 
