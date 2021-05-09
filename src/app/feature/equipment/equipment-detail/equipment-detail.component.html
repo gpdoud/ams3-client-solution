@@ -14,13 +14,13 @@
     <table class="table table-sm">
       <tr>
         <th>Code</th><td>{{ equipment.code }}</td>
-        <th>Description:</th><td>{{ equipment.Description }}</td>
-        <th>Year/Make Mfg/Model</th><td>{{ equipment.Year }} {{ equipment.Make }} {{ equipment.Model }}</td>
-        <th>Serial Number:</th><td>{{ equipment.SerialNumber }}</td>
-        <th>Active:</th><td>{{ equipment.Active ? "Yes" : "No" }}</td>
+        <th>Description:</th><td>{{ equipment.description }}</td>
+        <th>Year/Make Mfg/Model</th><td>{{ equipment.year }} {{ equipment.make }} {{ equipment.model }}</td>
+        <th>Serial Number:</th><td>{{ equipment.serialNumber }}</td>
+        <th>Active:</th><td>{{ equipment.active ? "Yes" : "No" }}</td>
       </tr>
     </table>
-    <app-asset-detail [asset]="equipment.Asset" [assetType]="assetType"></app-asset-detail>
+    <app-asset-detail [asset]="equipment.asset" [assetType]="assetType"></app-asset-detail>
     <table class="table table-sm">
       <tr>
         <td colspan="2">

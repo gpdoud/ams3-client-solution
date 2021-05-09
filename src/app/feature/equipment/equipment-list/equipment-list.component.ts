@@ -43,9 +43,9 @@ export class EquipmentListComponent implements OnInit {
     this.equipmentsvc.list()
       .subscribe(resp => {
         resp.data.sort((a, b) : number => {
-          if (a.Asset.code > b.Asset.code) {return 1}
-          else if (a.Asset.code < b.Asset.code) {return -1}
-          else if (a.SerialNumber > b.SerialNumber) {return 1}
+          if (a.asset.code > b.asset.code) {return 1}
+          else if (a.asset.code < b.asset.code) {return -1}
+          else if (a.serialNumber > b.serialNumber) {return 1}
           return -1;
         })
         this.equipments = resp.data;

@@ -14,14 +14,14 @@
     <table class="table table-sm">
       <tr>
         <th>Code:</th><td>{{ vehicle.code }}</td>
-        <th>Year/Make/Model:</th><td>{{ vehicle.Year + " " + vehicle.Make + " " + vehicle.Model }}</td>
-        <th>License Plate:</th><td>{{ vehicle.LicensePlate }}</td>
-        <th>Title No:</th><td>{{ vehicle.TitleNo }}</td>
-        <th>VIN:</th><td>{{ vehicle.VIN }}</td>
-        <th>Active:</th><td>{{ vehicle.Active ? "Yes" : "No" }}</td>
+        <th>Year/Make/Model:</th><td>{{ vehicle.year + " " + vehicle.make + " " + vehicle.model }}</td>
+        <th>License Plate:</th><td>{{ vehicle.licensePlate }}</td>
+        <th>Title No:</th><td>{{ vehicle.titleNo }}</td>
+        <th>VIN:</th><td>{{ vehicle.vin }}</td>
+        <th>Active:</th><td>{{ vehicle.active ? "Yes" : "No" }}</td>
       </tr>
     </table>
-    <app-asset-detail [asset]="vehicle.Asset" [assetType]="assetType"></app-asset-detail>
+    <app-asset-detail [asset]="vehicle.asset" [assetType]="assetType"></app-asset-detail>
     <table class="table table-sm">
       <tr>
         <td colspan="2">

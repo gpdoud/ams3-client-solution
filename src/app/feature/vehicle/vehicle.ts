@@ -10,7 +10,7 @@ export class Vehicle {
   model: string;
   year: number;
   licensePlate: string;
-  VIN: string;
+  vin: string;
   titleNo: string;
   active: boolean;
   assetName:string;
@@ -24,7 +24,7 @@ export class Vehicle {
     model: string,
     year: number,
     licensePlate: string,
-    VIN: string,
+    vin: string,
     titleNo: string,
     active: boolean = true
   ) {
@@ -36,7 +36,7 @@ export class Vehicle {
     this.model = model;
     this.year = year;
     this.licensePlate = licensePlate;
-    this.VIN = VIN;
+    this.vin = vin;
     this.titleNo = titleNo;
     this.active = active;
   }

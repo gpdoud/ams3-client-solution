@@ -23,7 +23,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Active">Active</label>
         </div>
-        <select [(ngModel)]="vehicle.Active"  name="Active" type="text" class="form-control" id="Active">
+        <select [(ngModel)]="vehicle.active"  name="Active" type="text" class="form-control" id="Active">
           <option [ngValue]="true" selected>Yes</option>
           <option [ngValue]="false">No</option>
         </select>
@@ -34,40 +34,40 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Year">Year</label>
         </div>
-        <input [(ngModel)]="vehicle.Year" name="Year" type="number" class="form-control" id="Year">
+        <input [(ngModel)]="vehicle.year" name="Year" type="number" class="form-control" id="Year">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Make">Make</label>
         </div>
-        <input [(ngModel)]="vehicle.Make" name="Make" type="text" class="form-control" id="Make">
+        <input [(ngModel)]="vehicle.make" name="Make" type="text" class="form-control" id="Make">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Model">Model</label>
         </div>
-        <input [(ngModel)]="vehicle.Model" name="Model" type="text" class="form-control" id="Model">
+        <input [(ngModel)]="vehicle.model" name="Model" type="text" class="form-control" id="Model">
       </div>
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="LicensePlate">License Plate</label>
         </div>
-        <input [(ngModel)]="vehicle.LicensePlate" name="LicensePlate" type="text" class="form-control" id="LicensePlate">
+        <input [(ngModel)]="vehicle.licensePlate" name="LicensePlate" type="text" class="form-control" id="LicensePlate">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="TitleNo">Title No.</label>
         </div>
-        <input [(ngModel)]="vehicle.TitleNo" name="TitleNo" type="text" class="form-control" id="TitleNo">
+        <input [(ngModel)]="vehicle.titleNo" name="TitleNo" type="text" class="form-control" id="TitleNo">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="VIN">VIN</label>
         </div>
-        <input [(ngModel)]="vehicle.VIN" name="VIN" type="text" class="form-control" id="VIN">
+        <input [(ngModel)]="vehicle.vin" name="VIN" type="text" class="form-control" id="VIN">
     </div>
 
   </div>
 
     <!-- <div class="container"> -->
-      <app-asset-edit [asset]="vehicle.Asset" [assetType]="assetType"></app-asset-edit>
+      <app-asset-edit [asset]="vehicle.asset" [assetType]="assetType"></app-asset-edit>
     <!-- </div> -->
 
   <div class="container">

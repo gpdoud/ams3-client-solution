@@ -17,24 +17,24 @@
     <table class="table table-sm table-hover table-bordered" *ngIf="equipments">
       <thead>
         <tr class="stky-hdr">
-          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Description')">Description <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Year')">Year <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Make')">Make Mfg <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Model')">Model <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('SerialNumber')">Serial Number <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('description')">Description <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('year')">Year <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('make')">Make Mfg <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('model')">Model <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('serialNumber')">Serial Number <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
         </tr>
       </thead>
       <tr *ngFor="let equip of equipments | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ equip.code }}</td>
-        <td>{{ equip.Description }}</td>
-        <td>{{ equip.Year }}</td>
-        <td>{{ equip.Make }}</td>
-        <td>{{ equip.Model }}</td>
-        <td>{{ equip.SerialNumber }}</td>
-        <td [ngClass]="{false: 'error'}[equip.Active]">{{ equip.Active ? "Yes" : "No" }}</td>
+        <td>{{ equip.description }}</td>
+        <td>{{ equip.year }}</td>
+        <td>{{ equip.make }}</td>
+        <td>{{ equip.model }}</td>
+        <td>{{ equip.serialNumber }}</td>
+        <td [ngClass]="{false: 'error'}[equip.Active]">{{ equip.active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/equipment/detail/{{ equip.id }}">Detail</a></span>
           <span> | <a routerLink="/equipment/edit/{{ equip.id }}">Edit</a></span>
