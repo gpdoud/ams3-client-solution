@@ -15,18 +15,18 @@
   <div class="content">
     <table class="table table-sm table-hover" *ngIf="categories">
       <tr class="stky-hdr">
-          <th><a (click)="sort('Name')">Name <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('AssetType')">Asset Type <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('name')">Name <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('assetType')">Asset Type <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
       <tr *ngFor="let category of categories | search: searchfor |  sort:sortProperty:sortOrder">
-        <td>{{ category.Name }}</td>
+        <td>{{ category.name }}</td>
         <!--  
         	This ngSwitch must match the enum declared in 
         	the Category.ts class file. As new asset types
         	are added, this needs to change.
         -->
-        <td [ngSwitch]="category.AssetType">
+        <td [ngSwitch]="category.assetType">
         	<span *ngSwitchCase=1>All Assets</span>
         	<span *ngSwitchCase=2>Vehicles</span>
         	<span *ngSwitchCase=3>Equipment</span>

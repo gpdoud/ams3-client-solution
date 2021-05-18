@@ -17,12 +17,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Name">Name</label>
         </div>
-        <input [(ngModel)]="category.Name" name="Name" type="text" class="form-control" id="Name">
+        <input [(ngModel)]="category.name" name="Name" type="text" class="form-control" id="Name">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="AssetType">AssetType</label>
         </div>
-        <select [(ngModel)]="category.AssetType" name="AssetType" class="form-control" id="AssetType">
+        <select [(ngModel)]="category.assetType" name="AssetType" class="form-control" id="AssetType">
           <option [ngValue]=1 selected>All Assets</option>
           <option [ngValue]=2>Vehicle</option>
           <option [ngValue]=3>Equipment</option>
