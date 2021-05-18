@@ -14,17 +14,17 @@
     <table class="table table-sm">
       <tr>
         <th>Code:</th><td>{{ property.code }}</td>
-        <th>Description:</th><td>{{ property.Description }}</td>
+        <th>Description:</th><td>{{ property.description }}</td>
         <th>Address</th>
         <td>
-          <span>{{ property.Address1 }}</span>
-          <span>{{ property.Address2 }}</span>
-          <span>{{ property.Address3 }}</span>
+          <span>{{ property.address1 }}</span>
+          <span>{{ property.address2 }}</span>
+          <span>{{ property.address3 }}</span>
         </td>
-        <th>Active:</th><td>{{ property.Active ? "Yes" : "No" }}</td>
+        <th>Active:</th><td>{{ property.active ? "Yes" : "No" }}</td>
       </tr>
     </table>
-    <app-asset-detail [asset]="property.Asset" [assetType]="assetType"></app-asset-detail>
+    <app-asset-detail [asset]="property.asset" [assetType]="assetType"></app-asset-detail>
     <table class="table table-sm">
       <tr>
         <td colspan="2">
