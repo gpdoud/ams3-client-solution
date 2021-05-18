@@ -24,7 +24,7 @@
           <label class="input-group-text" for="Department">Department</label>
         </div>
         <select [(ngModel)]="asset.departmentId" name="Department" type="text" class="form-control" id="Department">
-          <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.Name }}</option>
+          <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.name }}</option>
           <option value="">***Clear Department***</option>
         </select>
 
@@ -32,7 +32,7 @@
           <label class="input-group-text" for="Category">Category</label>
         </div>
         <select [(ngModel)]="asset.categoryId" name="Category" type="text" class="form-control" id="Category">
-          <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.Name }}</option>
+          <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
           <option value="">***Clear Category***</option>
         </select>
 
@@ -40,7 +40,7 @@
           <label class="input-group-text" for="User">User</label>
         </div>
         <select [(ngModel)]="asset.userId" name="User" type="text" class="form-control" id="User">
-          <option *ngFor="let user of users" [ngValue]="user.id">{{ user.Firstname }} {{ user.Lastname }}</option>
+          <option *ngFor="let user of users" [ngValue]="user.id">{{ user.firstname }} {{ user.lastname }}</option>
           <option value="">***Clear User***</option>
         </select>
 
@@ -51,7 +51,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Address">Address</label>
         </div>
-        <select [(ngModel)]="asset.AddressId" name="Address" type="text" class="form-control" id="Address">
+        <select [(ngModel)]="asset.addressId" name="Address" type="text" class="form-control" id="Address">
           <option *ngFor="let addr of addresses" [ngValue]="addr.id">{{ addr.Name }}</option>
           <option value="">***Clear Address***</option>
         </select>
@@ -68,12 +68,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="Cost">Cost</label>
         </div>
-        <input [(ngModel)]="asset.Cost" name="Cost" type="number" class="form-control" id="Cost">
+        <input [(ngModel)]="asset.cost" name="Cost" type="number" class="form-control" id="Cost">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="ResidualValue">ResidualValue</label>
         </div>
-        <input [(ngModel)]="asset.ResidualValue" name="ResidualValue" type="number" class="form-control" id="ResidualValue">
+        <input [(ngModel)]="asset.residualValue" name="ResidualValue" type="number" class="form-control" id="ResidualValue">
 
       </div>
 
@@ -81,12 +81,12 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="AcquireDate">AcquireDate</label>
         </div>
-        <input [ngModel]="asset.AcquiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.AcquiredDate = $event" name="AcquiredDate" type="date"  class="form-control">
+        <input [ngModel]="asset.acquiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.AcquiredDate = $event" name="AcquiredDate" type="date"  class="form-control">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="Dispose">DisposeDate</label>
         </div>
-        <input [ngModel]="asset.DisposedDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.DisposedDate = $event" name="DisposedDate" type="date"  class="form-control">
+        <input [ngModel]="asset.disposedDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.DisposedDate = $event" name="DisposedDate" type="date"  class="form-control">
       </div>
 
       <!-- 
@@ -98,25 +98,25 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="OutForRepairDate">OutForRepairDate</label>
         </div>
-        <input [ngModel]="asset.OutForRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.OutForRepairDate = $event" name="OutForRepairDate" type="date"  class="form-control">
+        <input [ngModel]="asset.outForRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.OutForRepairDate = $event" name="OutForRepairDate" type="date"  class="form-control">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="ReturnFromRepair">ReturnFromRepairDate</label>
         </div>
-        <input [ngModel]="asset.ReturnFromRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.ReturnFromRepairDate = $event" name="ReturnFromRepairDate" type="date"  class="form-control">
+        <input [ngModel]="asset.returnFromRepairDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.ReturnFromRepairDate = $event" name="ReturnFromRepairDate" type="date"  class="form-control">
       </div>
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="SurplusDate">SurplusDate</label>
         </div>
-        <input [ngModel]="asset.SurplusDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.SurplusDate = $event" name="SurplusDate" type="date"  class="form-control">
+        <input [ngModel]="asset.surplusDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.SurplusDate = $event" name="SurplusDate" type="date"  class="form-control">
 
         <div class="input-group-prepend">
           <label class="input-group-text" for="RetiredDate">RetiredDate</label>
         </div>
         <!-- <input [(ngModel)]="asset.RetiredDate" name="RetiredDate" type="text" class="form-control" id="RetiredDate"> -->
-        <input [ngModel]="asset.RetiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
+        <input [ngModel]="asset.retiredDate | date:'yyyy-MM-dd'" (ngModelChange)="asset.RetiredDate = $event" name="RetiredDate" type="date"  class="form-control">
       </div>
 
     </div>
