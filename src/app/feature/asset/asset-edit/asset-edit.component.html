@@ -52,7 +52,7 @@
           <label class="input-group-text" for="Address">Address</label>
         </div>
         <select [(ngModel)]="asset.addressId" name="Address" type="text" class="form-control" id="Address">
-          <option *ngFor="let addr of addresses" [ngValue]="addr.id">{{ addr.Name }}</option>
+          <option *ngFor="let addr of addresses" [ngValue]="addr.id">{{ addr.name }}</option>
           <option value="">***Clear Address***</option>
         </select>
 
