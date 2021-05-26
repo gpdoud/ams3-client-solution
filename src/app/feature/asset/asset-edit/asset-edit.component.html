@@ -25,7 +25,7 @@
         </div>
         <select [(ngModel)]="asset.departmentId" name="Department" type="text" class="form-control" id="Department">
           <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.name }}</option>
-          <option value="">***Clear Department***</option>
+          <option [ngValue]=null>***Clear Department***</option>
         </select>
 
         <div class="input-group-prepend">
@@ -33,7 +33,7 @@
         </div>
         <select [(ngModel)]="asset.categoryId" name="Category" type="text" class="form-control" id="Category">
           <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
-          <option value="">***Clear Category***</option>
+          <option [ngValue]=null>***Clear Category***</option>
         </select>
 
         <div class="input-group-prepend">
@@ -41,7 +41,7 @@
         </div>
         <select [(ngModel)]="asset.userId" name="User" type="text" class="form-control" id="User">
           <option *ngFor="let user of users" [ngValue]="user.id">{{ user.firstname }} {{ user.lastname }}</option>
-          <option value="">***Clear User***</option>
+          <option [ngValue]=null>***Clear User***</option>
         </select>
 
       </div>
@@ -53,7 +53,7 @@
         </div>
         <select [(ngModel)]="asset.addressId" name="Address" type="text" class="form-control" id="Address">
           <option *ngFor="let addr of addresses" [ngValue]="addr.id">{{ addr.name }}</option>
-          <option value="">***Clear Address***</option>
+          <option [ngValue]=null>***Clear Address***</option>
         </select>
 
         <div class="input-group-prepend">
