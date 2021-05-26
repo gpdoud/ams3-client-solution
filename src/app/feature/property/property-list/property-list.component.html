@@ -15,21 +15,21 @@
   <div class="content">
     <table class="table table-sm table-hover" *ngIf="properties">
       <tr class="stky-hdr">
-          <th><a (click)="sort('Code')">Code <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Description')">Description <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Address1')">Address <i class="fas fa-sort"></i></a></th>
-          <th><a (click)="sort('Active')">Active <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('code')">Code <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('description')">Description <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('address1')">Address <i class="fas fa-sort"></i></a></th>
+          <th><a (click)="sort('active')">Active <i class="fas fa-sort"></i></a></th>
           <th>Action</th>
       </tr>
       <tr *ngFor="let property of properties | search: searchfor |  sort:sortProperty:sortOrder">
         <td>{{ property.code }}</td>
-        <td>{{ property.Description }}</td>
+        <td>{{ property.description }}</td>
         <td>
-          {{ property.Address1 }}
-          <span *ngIf="property.Address2">, {{ property.Address2 }}</span>
-          <span *ngIf="property.Address3">, {{ property.Address3 }}</span>
+          {{ property.address1 }}
+          <span *ngIf="property.address2">, {{ property.address2 }}</span>
+          <span *ngIf="property.address3">, {{ property.address3 }}</span>
         </td>
-        <td>{{ property.Active ? "Yes" : "No" }}</td>
+        <td>{{ property.active ? "Yes" : "No" }}</td>
         <td>
           <span><a routerLink="/properties/detail/{{  property.id }}">Detail</a></span>
           <span> | <a routerLink="/properties/edit/{{ property.id }}">Edit</a></span>
